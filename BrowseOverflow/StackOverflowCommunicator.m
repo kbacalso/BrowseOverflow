@@ -15,4 +15,9 @@
     
 }
 
+- (void)fetchQuestionBodyWithID:(NSInteger)questionID
+{
+    
+}
+
 @end

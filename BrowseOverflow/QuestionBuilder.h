@@ -15,9 +15,16 @@ enum {
     QuestionBuilderMissingDataError,
 };
 
+@class Question;
+
 @interface QuestionBuilder : NSObject
+
+@property (strong) Question *questionToFill;
 
 - (NSArray *)questionsFromJSON:(NSString *)objectNotation
                          error:(NSError **)error;
+
+- (void)fillInDetailsForQuestion:(Question *)question
+                        fromJSON:(NSString *)objectNotation;
 
 @end

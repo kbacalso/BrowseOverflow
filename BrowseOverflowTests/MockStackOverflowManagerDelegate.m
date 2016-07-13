@@ -21,4 +21,9 @@
     self.receivedQuestions = questions;
 }
 
+- (void)fetchingQuestionBodyFailedWithError:(NSError *)error
+{
+    self.fetchError = error;
+}
+
 @end

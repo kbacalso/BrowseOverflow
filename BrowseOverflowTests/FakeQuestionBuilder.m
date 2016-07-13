@@ -23,4 +23,10 @@
     return _arrayToReturn;
 }
 
+- (void)fillInDetailsForQuestion:(Question *)question fromJSON:(NSString *)objectNotation
+{
+    self.JSON = objectNotation;
+    [super fillInDetailsForQuestion:question fromJSON:objectNotation];
+}
+
 @end

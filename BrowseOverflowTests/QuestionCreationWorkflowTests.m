@@ -47,7 +47,9 @@
     
     questionToFetch = [[Question alloc] init];
     questionToFetch.questionID = 1234;
+    
     questionArray = [NSArray arrayWithObject:questionToFetch];
+    
     communicator = [[MockStackOverflowCommunicator alloc] init];
     mgr.communicator = communicator;
 }
@@ -80,9 +82,6 @@
 
 - (void)testAskingForQuestionsMeansRequestingData
 {
-    MockStackOverflowCommunicator *communicator = [[MockStackOverflowCommunicator alloc] init];
-    mgr.communicator = communicator;
-    
     Topic *topic = [[Topic alloc] initWithName:@"iPhone" tag:@"iphone"];
     [mgr fetchQuestionsOnTopic:topic];
     
@@ -174,6 +173,7 @@
 
 - (void)testManagerPassesRetrievedQuestionBodyToQuestionBuilder
 {
+    [mgr fetchBodyForQuestion:questionToFetch]; // I think this is more appropriate
     [mgr receivedQuestionBodyJSON:@"Fake JSON"];
     XCTAssertEqualObjects(questionBuilder.JSON,
                           @"Fake JSON",

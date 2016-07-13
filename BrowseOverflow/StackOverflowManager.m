@@ -11,6 +11,7 @@
 #import "Topic.h"
 #import "MockStackOverflowCommunicator.h"
 #import "QuestionBuilder.h"
+#import "Question.h"
 
 NSString *StackOverflowManagerError = @"StackOverflowManagerError";
 NSString *StackOverflowManagerSearchFailedError = @"StackOverflowManagerSearchFailedError";
@@ -70,6 +71,29 @@ NSString *StackOverflowManagerSearchFailedError = @"StackOverflowManagerSearchFa
         [_delegate didReceiveQuestions:questions];
         
     }
+}
+
+- (void)fetchBodyForQuestion:(Question *)question
+{
+    self.questionNeedingBody = question;
+    [_communicator fetchQuestionBodyWithID:[question questionID]];
+}
+
+- (void)fetchingQuestionBodyFailedWithError:(NSError *)error
+{
+    NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
+    
+    NSError *reportableError = [NSError errorWithDomain:StackOverflowManagerError
+                                                   code:StackOverflowManagerErrorQuestionFetchBodyCode
+                                               userInfo:errorInfo];
+    
+    [_delegate fetchingQuestionBodyFailedWithError:reportableError];
+}
+
+- (void)receivedQuestionBodyJSON:(NSString *)objectNotation
+{
+    [_questionBuilder fillInDetailsForQuestion:self.questionNeedingBody fromJSON:objectNotation];
+    self.questionNeedingBody = nil;
 }
 
 @end

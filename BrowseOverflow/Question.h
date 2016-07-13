@@ -19,7 +19,7 @@
 @property NSInteger score;
 @property (readonly) NSArray *answers;
 @property (strong) Person *asker;
-@property
+@property NSString *body;
 
 - (void)addAnswer:(Answer *)answer;
 

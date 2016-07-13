@@ -174,14 +174,14 @@
 		3F98425A1D250EB40067FD4B /* BrowseOverflowTests */ = {
 			isa = PBXGroup;
 			children = (
-				3F9D2D4B1D2E3EE3003ACEBE /* Mocks */,
-				3F9842661D250FF60067FD4B /* TopicTests.m */,
 				3F0CBF9E1D2611D1006A4140 /* AnswerTests.m */,
-				3F0CBF921D25FD7C006A4140 /* QuestionTests.m */,
 				3F0CBF981D2604EA006A4140 /* PersonTests.m */,
-				3F0CBFA41D2641BC006A4140 /* QuestionCreationWorkflowTests.m */,
-				3F98425D1D250EB40067FD4B /* Info.plist */,
 				3F9D2D491D2E2658003ACEBE /* QuestionBuilderTests.m */,
+				3F0CBFA41D2641BC006A4140 /* QuestionCreationWorkflowTests.m */,
+				3F0CBF921D25FD7C006A4140 /* QuestionTests.m */,
+				3F9842661D250FF60067FD4B /* TopicTests.m */,
+				3F98425D1D250EB40067FD4B /* Info.plist */,
+				3F9D2D4B1D2E3EE3003ACEBE /* Mocks */,
 			);
 			path = BrowseOverflowTests;
 			sourceTree = "<group>";

@@ -12,41 +12,44 @@
 #import "Person.h"
 
 static NSString *questionJSON = @"{"
-@"items: ["
+@"\"items\":["
 @"{"
-@"tags: ["
-@"       \"ios\","
-@"       \"iphone\","
-@"       \"xcode\","
-@"       \"swift\","
-@"       \"ipad\""
-@"       ],"
-@"owner: {"
-@"reputation: 509,"
-@"user_id: 3468651,"
-@"user_type: \"registered\","
-@"accept_rate: 50,"
-@"profile_image: \"https://i.stack.imgur.com/VCLH7.png?s=128&g=1\","
-@"display_name: \"Taki\","
-@"link: \"http://stackoverflow.com/users/3468651/oleshko\""
-@"},"
-@"is_answered: true,"
-@"view_count: 8666,"
-@"accepted_answer_id: 25973816,"
-@"answer_count: 3,"
-@"score: 18,"
-@"last_activity_date: 1467881052,"
-@"creation_date: 1411387529,"
-@"last_edit_date: 1467881052,"
-@"question_id: 25973733,"
-@"link: \"http://stackoverflow.com/questions/25973733/status-bar-height-in-swift\","
-@"title: \"Status bar height in swift\""
+@"    \"tags\":["
+@"            \"iphone\","
+@"            \"uitextfield\""
+@"            ],"
+@"    \"owner\":{"
+@"        \"reputation\":19499,"
+@"        \"user_id\":343204,"
+@"        \"user_type\":\"registered\","
+@"        \"accept_rate\":49,"
+@"        \"profile_image\":\"https://www.gravatar.com/avatar/8679514f8cdfd0c077fc6c242cda8882?s=128&d=identicon&r=PG\","
+@"        \"display_name\":\"Snow Crash\","
+@"        \"link\":\"http://stackoverflow.com/users/343204/snow-crash\""
+@"    },"
+@"    \"is_answered\":true,"
+@"    \"view_count\":28886,"
+@"    \"accepted_answer_id\":8532938,"
+@"    \"answer_count\":8,"
+@"    \"score\":19,"
+@"    \"last_activity_date\":1468320890,"
+@"    \"creation_date\":1324031474,"
+@"    \"question_id\":8532874,"
+@"    \"link\":\"http://stackoverflow.com/questions/8532874/clear-uitextfield-placeholder-text-on-tap\","
+@"    \"title\":\"Clear UITextField Placeholder text on tap\","
+@"    \"body\":\"<p>I've been trying to use persistent keychain references. </p>\""
 @"}"
-@"        ],"
-@"has_more: true,"
-@"quota_max: 300,"
-@"quota_remaining: 287"
+@"],"
+@"\"has_more\":true,"
+@"\"quota_max\":300,"
+@"\"quota_remaining\":292"
 @"}";
+
+static NSString *stringIsNotJSON = @"Fake JSON";
+
+static NSString *noQuestionsJSONString = @"{}";
+
+
 
 
 @interface QuestionBuilderTests : XCTestCase
@@ -123,30 +126,40 @@ static NSString *questionJSON = @"{"
 - (void)testQuestionCreatedFromJSONHasPropertiesPresentedInJSON
 {
     XCTAssertEqual(question.questionID,
-                   25973733,
+                   8532874,
                    @"The question ID should match the data we sent");
     
     XCTAssertEqual([question.date timeIntervalSince1970],
-                   (NSTimeInterval)1411387529,
+                   (NSTimeInterval)1324031474,
                    @"The date of the question should match the data");
     
     XCTAssertEqualObjects(question.title,
-                          @"Status bar height in swift",
+                          @"Clear UITextField Placeholder text on tap",
                           @"Title should match the provided data");
     
     XCTAssertEqual(question.score,
-                   18,
+                   19,
                    @"Score should match the data");
     
-    Person *asker = question.maker;
+    Person *asker = question.asker;
+    
+    XCTAssertEqualObjects(asker.name,
+                          @"Snow Crash",
+                          @"Looks like Snow Crash should have asked this question");
     
     XCTAssertEqualObjects([asker.avatarURL absoluteString],
-                          @"Taki",
-                          @"Looks like I should have asked this question");
-    
-    XCTAssertEqualObjects([asker.avatarURL absoluteString],
-                          @"https://i.stack.imgur.com/VCLH7.png?s=128&g=1\\",
+                          @"https://www.gravatar.com/avatar/8679514f8cdfd0c077fc6c242cda8882?s=128&d=identicon&r=PG",
                           @"The avatar URL should match the provided data");
+}
+
+- (void)testQuestionCreatedFromEmptyObjectIsStillValidObject
+{
+    NSString *emptyQuestion = @"{ \"items\": [{}] }";
+    NSArray *questions = [questionBuilder questionsFromJSON:emptyQuestion
+                                                      error:NULL];
+    XCTAssertEqual([questions count],
+                   (NSUInteger)1,
+                   @"QuestionBuilder must handle partial input");
 }
 
 - (void)testBuildingQuestionBodyWithNoDataCannotBeTried
@@ -163,13 +176,15 @@ static NSString *questionJSON = @"{"
 
 - (void)testNonJSONDataDoesNotCauseABodyToBeAddedToAQuestion
 {
-    [questionBuilder fillInDetailsForQuestion:question fromJSON:stringIsNotJSON];
+    [questionBuilder fillInDetailsForQuestion:question
+                                     fromJSON:stringIsNotJSON];
     XCTAssertNil(question.body, @"Body should not have been added");
 }
 
 - (void)testJSONWhichDoesNotContainABodyDoesNotCauseBodyToBeAdded
 {
-    [questionBuilder fillInDetailsForQuestion:question fromJSON:noQuestionsJSONString];
+    [questionBuilder fillInDetailsForQuestion:question
+                                     fromJSON:noQuestionsJSONString];
     XCTAssertNil(question.body, @"There was no body to add");
 }
 
@@ -179,7 +194,7 @@ static NSString *questionJSON = @"{"
                                      fromJSON:questionJSON];
     
     XCTAssertEqualObjects(question.body,
-                          @"<p>I've been tr",
+                          @"<p>I've been trying to use persistent keychain references. </p>",
                           @"The correct question body is added");
 }
 

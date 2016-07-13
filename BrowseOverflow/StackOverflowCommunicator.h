@@ -11,5 +11,6 @@
 @interface StackOverflowCommunicator : NSObject
 
 - (void)searchForQuestionsWithTag:(NSString *)tag;
+- (void)fetchQuestionBodyWithID:(NSInteger)questionID;
 
 @end

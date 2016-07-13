@@ -43,8 +43,8 @@
     highScore.score = 4;
     [question addAnswer:highScore];
     
-    asker = [[Person alloc] initWithName:@"Taki"
-                          avatarLocation:@""];
+    asker = [[Person alloc] initWithName:@"Snow Crash"
+                          avatarLocation:@"https://www.gravatar.com/avatar/8679514f8cdfd0c077fc6c242cda8882?s=128&d=identicon&r=PG\\"];
     question.asker = asker;
 }
 
