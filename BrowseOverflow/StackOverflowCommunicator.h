@@ -7,10 +7,30 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StackOverflowCommunicatorDelegate.h"
 
-@interface StackOverflowCommunicator : NSObject
+extern NSString *StackOverflowCommunicatorErrorDomain;
+
+@interface StackOverflowCommunicator : NSObject <NSURLConnectionDataDelegate>
+{
+    @protected
+    NSURL           *fetchingURL;
+    NSURLConnection *fetchingConnection;
+    NSMutableData *receivedData;
+    
+    @private
+    void (^errorHandler)(NSError *);
+    void (^successHandler)(NSString *);
+}
+
+@property (weak) id <StackOverflowCommunicatorDelegate> delegate;
 
 - (void)searchForQuestionsWithTag:(NSString *)tag;
 - (void)fetchQuestionBodyWithID:(NSInteger)questionID;
+
+- (void)downloadInformationForQuestionWithID:(NSInteger)identifier;
+- (void)downloadAnswersToQuestionID:(NSInteger)identifier;
+
+- (void)cancelAndDiscardURLConnection;
 
 @end

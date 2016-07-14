@@ -38,6 +38,11 @@
 		3FED54A71D2D02660059D928 /* StackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FED54A51D2D02660059D928 /* StackOverflowCommunicator.m */; };
 		3FED54AA1D2D02820059D928 /* MockStackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FED54A91D2D02820059D928 /* MockStackOverflowCommunicator.m */; };
 		3FED54AB1D2D02820059D928 /* MockStackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FED54A91D2D02820059D928 /* MockStackOverflowCommunicator.m */; };
+		DEE8A5D01D3630BE00BBEFEA /* StackOverflowCommunicatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8A5CF1D3630BE00BBEFEA /* StackOverflowCommunicatorTests.m */; };
+		DEE8A5D31D3636AC00BBEFEA /* InspectableStackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8A5D21D3636AC00BBEFEA /* InspectableStackOverflowCommunicator.m */; };
+		DEE8A5D61D36685700BBEFEA /* NonNetworkedStackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8A5D51D36685700BBEFEA /* NonNetworkedStackOverflowCommunicator.m */; };
+		DEE8A5D91D3668CF00BBEFEA /* MockStackOverflowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8A5D81D3668CF00BBEFEA /* MockStackOverflowManager.m */; };
+		DEE8A5DC1D36693900BBEFEA /* FakeURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8A5DB1D36693900BBEFEA /* FakeURLResponse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +97,16 @@
 		3FED54A51D2D02660059D928 /* StackOverflowCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackOverflowCommunicator.m; sourceTree = "<group>"; };
 		3FED54A81D2D02820059D928 /* MockStackOverflowCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockStackOverflowCommunicator.h; sourceTree = "<group>"; };
 		3FED54A91D2D02820059D928 /* MockStackOverflowCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockStackOverflowCommunicator.m; sourceTree = "<group>"; };
+		DEE8A5CF1D3630BE00BBEFEA /* StackOverflowCommunicatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackOverflowCommunicatorTests.m; sourceTree = "<group>"; };
+		DEE8A5D11D3636AC00BBEFEA /* InspectableStackOverflowCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectableStackOverflowCommunicator.h; sourceTree = "<group>"; };
+		DEE8A5D21D3636AC00BBEFEA /* InspectableStackOverflowCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectableStackOverflowCommunicator.m; sourceTree = "<group>"; };
+		DEE8A5D41D36685700BBEFEA /* NonNetworkedStackOverflowCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonNetworkedStackOverflowCommunicator.h; sourceTree = "<group>"; };
+		DEE8A5D51D36685700BBEFEA /* NonNetworkedStackOverflowCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonNetworkedStackOverflowCommunicator.m; sourceTree = "<group>"; };
+		DEE8A5D71D3668CF00BBEFEA /* MockStackOverflowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockStackOverflowManager.h; sourceTree = "<group>"; };
+		DEE8A5D81D3668CF00BBEFEA /* MockStackOverflowManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockStackOverflowManager.m; sourceTree = "<group>"; };
+		DEE8A5DA1D36693900BBEFEA /* FakeURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeURLResponse.h; sourceTree = "<group>"; };
+		DEE8A5DB1D36693900BBEFEA /* FakeURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeURLResponse.m; sourceTree = "<group>"; };
+		DEE8A5DE1D366D8E00BBEFEA /* StackOverflowCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackOverflowCommunicatorDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,32 +148,32 @@
 		3F98423D1D250EB40067FD4B /* BrowseOverflow */ = {
 			isa = PBXGroup;
 			children = (
-				3F9842411D250EB40067FD4B /* AppDelegate.h */,
-				3F9842421D250EB40067FD4B /* AppDelegate.m */,
-				3F9842441D250EB40067FD4B /* MasterViewController.h */,
-				3F9842451D250EB40067FD4B /* MasterViewController.m */,
-				3F9842471D250EB40067FD4B /* DetailViewController.h */,
-				3F9842481D250EB40067FD4B /* DetailViewController.m */,
-				3F98424A1D250EB40067FD4B /* Main.storyboard */,
-				3F98424D1D250EB40067FD4B /* Assets.xcassets */,
-				3F98424F1D250EB40067FD4B /* LaunchScreen.storyboard */,
-				3F9842521D250EB40067FD4B /* Info.plist */,
-				3F98423E1D250EB40067FD4B /* Supporting Files */,
-				3F9842681D2510660067FD4B /* Topic.h */,
-				3F9842691D2510660067FD4B /* Topic.m */,
-				3F0CBF941D25FDE1006A4140 /* Question.h */,
-				3F0CBF951D25FDE1006A4140 /* Question.m */,
-				3F0CBF9A1D2605E2006A4140 /* Person.h */,
-				3F0CBF9B1D2605E2006A4140 /* Person.m */,
 				3F0CBFA01D2611F7006A4140 /* Answer.h */,
 				3F0CBFA11D2611F7006A4140 /* Answer.m */,
+				3F9842411D250EB40067FD4B /* AppDelegate.h */,
+				3F9842421D250EB40067FD4B /* AppDelegate.m */,
+				3F98424D1D250EB40067FD4B /* Assets.xcassets */,
+				3F9842471D250EB40067FD4B /* DetailViewController.h */,
+				3F9842481D250EB40067FD4B /* DetailViewController.m */,
+				3F98424F1D250EB40067FD4B /* LaunchScreen.storyboard */,
+				3F98424A1D250EB40067FD4B /* Main.storyboard */,
+				3F9842441D250EB40067FD4B /* MasterViewController.h */,
+				3F9842451D250EB40067FD4B /* MasterViewController.m */,
+				3F0CBF9A1D2605E2006A4140 /* Person.h */,
+				3F0CBF9B1D2605E2006A4140 /* Person.m */,
+				3F0CBF941D25FDE1006A4140 /* Question.h */,
+				3F0CBF951D25FDE1006A4140 /* Question.m */,
+				3F9D2D421D2DF713003ACEBE /* QuestionBuilder.h */,
+				3F9D2D431D2DF713003ACEBE /* QuestionBuilder.m */,
+				3FED54A41D2D02660059D928 /* StackOverflowCommunicator.h */,
+				3FED54A51D2D02660059D928 /* StackOverflowCommunicator.m */,
+				DEE8A5DE1D366D8E00BBEFEA /* StackOverflowCommunicatorDelegate.h */,
 				3F0CBFA61D2641E2006A4140 /* StackOverflowManager.h */,
 				3F0CBFA71D2641E2006A4140 /* StackOverflowManager.m */,
 				3FED54A01D2CFFA60059D928 /* StackOverflowManagerDelegate.h */,
-				3FED54A41D2D02660059D928 /* StackOverflowCommunicator.h */,
-				3FED54A51D2D02660059D928 /* StackOverflowCommunicator.m */,
-				3F9D2D421D2DF713003ACEBE /* QuestionBuilder.h */,
-				3F9D2D431D2DF713003ACEBE /* QuestionBuilder.m */,
+				3F98423E1D250EB40067FD4B /* Supporting Files */,
+				3F9842681D2510660067FD4B /* Topic.h */,
+				3F9842691D2510660067FD4B /* Topic.m */,
 			);
 			path = BrowseOverflow;
 			sourceTree = "<group>";
@@ -166,6 +181,7 @@
 		3F98423E1D250EB40067FD4B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3F9842521D250EB40067FD4B /* Info.plist */,
 				3F98423F1D250EB40067FD4B /* main.m */,
 			);
 			name = "Supporting Files";
@@ -175,13 +191,14 @@
 			isa = PBXGroup;
 			children = (
 				3F0CBF9E1D2611D1006A4140 /* AnswerTests.m */,
+				3F98425D1D250EB40067FD4B /* Info.plist */,
+				3F9D2D4B1D2E3EE3003ACEBE /* Mocks */,
 				3F0CBF981D2604EA006A4140 /* PersonTests.m */,
 				3F9D2D491D2E2658003ACEBE /* QuestionBuilderTests.m */,
 				3F0CBFA41D2641BC006A4140 /* QuestionCreationWorkflowTests.m */,
 				3F0CBF921D25FD7C006A4140 /* QuestionTests.m */,
+				DEE8A5CF1D3630BE00BBEFEA /* StackOverflowCommunicatorTests.m */,
 				3F9842661D250FF60067FD4B /* TopicTests.m */,
-				3F98425D1D250EB40067FD4B /* Info.plist */,
-				3F9D2D4B1D2E3EE3003ACEBE /* Mocks */,
 			);
 			path = BrowseOverflowTests;
 			sourceTree = "<group>";
@@ -195,6 +212,14 @@
 				3FED54A21D2D00190059D928 /* MockStackOverflowManagerDelegate.m */,
 				3F9D2D461D2DF766003ACEBE /* FakeQuestionBuilder.h */,
 				3F9D2D471D2DF766003ACEBE /* FakeQuestionBuilder.m */,
+				DEE8A5D11D3636AC00BBEFEA /* InspectableStackOverflowCommunicator.h */,
+				DEE8A5D21D3636AC00BBEFEA /* InspectableStackOverflowCommunicator.m */,
+				DEE8A5D41D36685700BBEFEA /* NonNetworkedStackOverflowCommunicator.h */,
+				DEE8A5D51D36685700BBEFEA /* NonNetworkedStackOverflowCommunicator.m */,
+				DEE8A5D71D3668CF00BBEFEA /* MockStackOverflowManager.h */,
+				DEE8A5D81D3668CF00BBEFEA /* MockStackOverflowManager.m */,
+				DEE8A5DA1D36693900BBEFEA /* FakeURLResponse.h */,
+				DEE8A5DB1D36693900BBEFEA /* FakeURLResponse.m */,
 			);
 			name = Mocks;
 			sourceTree = "<group>";
@@ -323,9 +348,13 @@
 				3F0CBF9F1D2611D1006A4140 /* AnswerTests.m in Sources */,
 				3F9D2D481D2DF766003ACEBE /* FakeQuestionBuilder.m in Sources */,
 				3F0CBF9D1D2605E2006A4140 /* Person.m in Sources */,
+				DEE8A5DC1D36693900BBEFEA /* FakeURLResponse.m in Sources */,
 				3F9D2D4A1D2E2658003ACEBE /* QuestionBuilderTests.m in Sources */,
+				DEE8A5D01D3630BE00BBEFEA /* StackOverflowCommunicatorTests.m in Sources */,
+				DEE8A5D61D36685700BBEFEA /* NonNetworkedStackOverflowCommunicator.m in Sources */,
 				3F98426B1D2510660067FD4B /* Topic.m in Sources */,
 				3FED54AB1D2D02820059D928 /* MockStackOverflowCommunicator.m in Sources */,
+				DEE8A5D91D3668CF00BBEFEA /* MockStackOverflowManager.m in Sources */,
 				3F0CBFA31D2611F7006A4140 /* Answer.m in Sources */,
 				3F9D2D451D2DF713003ACEBE /* QuestionBuilder.m in Sources */,
 				3FED54A31D2D00190059D928 /* MockStackOverflowManagerDelegate.m in Sources */,
@@ -335,6 +364,7 @@
 				3F0CBFA51D2641BC006A4140 /* QuestionCreationWorkflowTests.m in Sources */,
 				3FED54A71D2D02660059D928 /* StackOverflowCommunicator.m in Sources */,
 				3F9842671D250FF60067FD4B /* TopicTests.m in Sources */,
+				DEE8A5D31D3636AC00BBEFEA /* InspectableStackOverflowCommunicator.m in Sources */,
 				3F0CBF991D2604EA006A4140 /* PersonTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

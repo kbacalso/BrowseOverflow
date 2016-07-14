@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StackOverflowCommunicatorDelegate.h"
 
 extern NSString *StackOverflowManagerError;
 extern NSString *StackOverflowManagerSearchFailedError;
@@ -24,7 +25,7 @@ enum {
 
 @protocol StackOverflowManagerDelegate;
 
-@interface StackOverflowManager : NSObject
+@interface StackOverflowManager : NSObject <StackOverflowCommunicatorDelegate>
 
 @property (weak, nonatomic) id<StackOverflowManagerDelegate> delegate;
 @property (strong) StackOverflowCommunicator *communicator;
