@@ -7,7 +7,6 @@
 //
 
 #import "BrowseOverflowViewController.h"
-#import "TopicTableDelegate.h"
 #import "TopicTableDataSource.h"
 
 @implementation BrowseOverflowViewController

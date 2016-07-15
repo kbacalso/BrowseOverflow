@@ -9,7 +9,6 @@
 #import <XCTest/XCTest.h>
 #import "BrowseOverflowViewController.h"
 #import <objc/objc-runtime.h>
-#import "TopicTableDelegate.h"
 #import "TopicTableDataSource.h"
 
 @interface BrowseOverflowViewControllerTests : XCTestCase

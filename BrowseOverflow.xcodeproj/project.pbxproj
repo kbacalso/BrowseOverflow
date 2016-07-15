@@ -42,10 +42,8 @@
 		DEE7C9D01D37226A00F1EA41 /* BrowseOverflowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE7C9CE1D37226A00F1EA41 /* BrowseOverflowViewController.m */; };
 		DEE7C9D21D37232900F1EA41 /* BrowseOverflowViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE7C9D11D37232900F1EA41 /* BrowseOverflowViewControllerTests.m */; };
 		DEE7C9D51D37273200F1EA41 /* TopicTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE7C9D41D37273200F1EA41 /* TopicTableDataSource.m */; };
-		DEE7C9D81D3727A200F1EA41 /* TopicTableDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE7C9D71D3727A200F1EA41 /* TopicTableDelegate.m */; };
 		DEE7C9D91D372F0C00F1EA41 /* TopicTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE7C9D41D37273200F1EA41 /* TopicTableDataSource.m */; };
 		DEE7C9DB1D372F5500F1EA41 /* TopicTableDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE7C9DA1D372F5500F1EA41 /* TopicTableDataSourceTests.m */; };
-		DEE7C9DC1D3741B600F1EA41 /* TopicTableDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE7C9D71D3727A200F1EA41 /* TopicTableDelegate.m */; };
 		DEE7C9DE1D37498B00F1EA41 /* TopicTableDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE7C9DD1D37498B00F1EA41 /* TopicTableDelegateTests.m */; };
 		DEE8A5D01D3630BE00BBEFEA /* StackOverflowCommunicatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8A5CF1D3630BE00BBEFEA /* StackOverflowCommunicatorTests.m */; };
 		DEE8A5D31D3636AC00BBEFEA /* InspectableStackOverflowCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8A5D21D3636AC00BBEFEA /* InspectableStackOverflowCommunicator.m */; };
@@ -111,8 +109,6 @@
 		DEE7C9D11D37232900F1EA41 /* BrowseOverflowViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseOverflowViewControllerTests.m; sourceTree = "<group>"; };
 		DEE7C9D31D37273200F1EA41 /* TopicTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicTableDataSource.h; path = BrowseOverflowTests/TopicTableDataSource.h; sourceTree = SOURCE_ROOT; };
 		DEE7C9D41D37273200F1EA41 /* TopicTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicTableDataSource.m; path = BrowseOverflowTests/TopicTableDataSource.m; sourceTree = SOURCE_ROOT; };
-		DEE7C9D61D3727A200F1EA41 /* TopicTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicTableDelegate.h; path = BrowseOverflowTests/TopicTableDelegate.h; sourceTree = SOURCE_ROOT; };
-		DEE7C9D71D3727A200F1EA41 /* TopicTableDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicTableDelegate.m; path = BrowseOverflowTests/TopicTableDelegate.m; sourceTree = SOURCE_ROOT; };
 		DEE7C9DA1D372F5500F1EA41 /* TopicTableDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicTableDataSourceTests.m; sourceTree = "<group>"; };
 		DEE7C9DD1D37498B00F1EA41 /* TopicTableDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicTableDelegateTests.m; sourceTree = "<group>"; };
 		DEE8A5CF1D3630BE00BBEFEA /* StackOverflowCommunicatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackOverflowCommunicatorTests.m; sourceTree = "<group>"; };
@@ -196,8 +192,6 @@
 				3F9842691D2510660067FD4B /* Topic.m */,
 				DEE7C9D31D37273200F1EA41 /* TopicTableDataSource.h */,
 				DEE7C9D41D37273200F1EA41 /* TopicTableDataSource.m */,
-				DEE7C9D61D3727A200F1EA41 /* TopicTableDelegate.h */,
-				DEE7C9D71D3727A200F1EA41 /* TopicTableDelegate.m */,
 			);
 			path = BrowseOverflow;
 			sourceTree = "<group>";
@@ -367,7 +361,6 @@
 				3F9842491D250EB40067FD4B /* DetailViewController.m in Sources */,
 				DEE7C9CF1D37226A00F1EA41 /* BrowseOverflowViewController.m in Sources */,
 				DEE7C9D91D372F0C00F1EA41 /* TopicTableDataSource.m in Sources */,
-				DEE7C9DC1D3741B600F1EA41 /* TopicTableDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +379,6 @@
 				3F98426B1D2510660067FD4B /* Topic.m in Sources */,
 				3FED54AB1D2D02820059D928 /* MockStackOverflowCommunicator.m in Sources */,
 				DEE8A5D91D3668CF00BBEFEA /* MockStackOverflowManager.m in Sources */,
-				DEE7C9D81D3727A200F1EA41 /* TopicTableDelegate.m in Sources */,
 				3F0CBFA31D2611F7006A4140 /* Answer.m in Sources */,
 				3F9D2D451D2DF713003ACEBE /* QuestionBuilder.m in Sources */,
 				3FED54A31D2D00190059D928 /* MockStackOverflowManagerDelegate.m in Sources */,

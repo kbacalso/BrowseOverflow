@@ -7,7 +7,6 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "TopicTableDelegate.h"
 #import "TopicTableDataSource.h"
 #import "Topic.h"
 
